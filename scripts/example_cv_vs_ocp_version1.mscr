@@ -1,0 +1,48 @@
+e
+set_script_output 3
+var c
+var p
+var o
+var d
+var n
+var m
+set_pgstat_chan 0
+set_pgstat_mode 3
+set_max_bandwidth 80
+cell_off
+set_range ba 21m
+set_autoranging ba 21m 21m
+set_range ab 2100m
+set_autoranging ab 2100m 2100m
+meas_loop_ocp o 500m 1
+pck_start
+pck_add o
+pck_end
+endloop
+set_range ba 21m
+set_autoranging ba 2100p 21m
+store_var d -2200m ab
+add_var d o
+store_var n 1200m ab
+add_var n o
+store_var m -2200m ab
+add_var m o
+set_e m
+cell_on
+meas_loop_ca p c m 500m 10
+pck_start
+pck_add p
+pck_add c
+pck_end
+endloop
+meas_loop_cv p c m d n 5m 100m nscans(2)
+pck_start
+pck_add p
+pck_add c
+pck_end
+endloop
+on_finished:
+
+
+cell_off
+

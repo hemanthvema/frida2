@@ -1,0 +1,28 @@
+e
+var c
+var p
+var t
+wait 1
+set_pgstat_chan 0
+set_pgstat_mode 2
+set_max_bandwidth 40
+set_range ab 2100m
+set_autoranging ab 210m 2100m
+set_range ba 21m
+set_autoranging ba 21m 21m
+cell_off
+store_var t 0 eb
+meas_loop_ocp p 1 60 
+    pck_start
+    pck_add t
+    pck_add p
+    pck_end
+    add_var t 1
+endloop
+
+#on_finished:
+cell_off
+
+
+
+

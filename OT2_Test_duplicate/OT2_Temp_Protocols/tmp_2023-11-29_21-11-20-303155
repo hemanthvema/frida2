@@ -1,0 +1,43 @@
+from opentrons import protocol_api
+from opentrons.types import Location, Point
+
+metadata = {'apiLevel': '2.6'}
+
+
+def run(protocol: protocol_api.ProtocolContext):
+	# Labware
+	labware_1 = protocol.load_labware('opentrons_6_tuberack_falcon_50ml_conical', 1)
+	labware_3 = protocol.load_labware('opentrons_10_tuberack_falcon_4x50ml_6x15ml_conical', 3)
+	labware_10 = protocol.load_labware('opentrons_96_tiprack_1000ul', 10)
+	labware_11 = protocol.load_labware('opentrons_96_tiprack_20ul', 11)
+	left_pipette = protocol.load_instrument(instrument_name='p1000_single_gen2', mount='left')
+	right_pipette = protocol.load_instrument(instrument_name='p20_single_gen2', mount='right')
+
+	# Protocol
+	right_pipette.pick_up_tip(labware_11.wells()[56])
+	right_pipette.aspirate(18.96971686762255, location=labware_1.wells()[0].bottom(z=54.85770372730309))
+	right_pipette.dispense(18.96971686762255, location=labware_3.wells()[9].bottom(z=54.85770372730309))
+	right_pipette.aspirate(18.96971686762255, location=labware_1.wells()[0].bottom(z=54.82689633742007))
+	right_pipette.dispense(18.96971686762255, location=labware_3.wells()[9].bottom(z=54.82689633742007))
+	right_pipette.aspirate(18.96971686762255, location=labware_1.wells()[0].bottom(z=54.796088947537044))
+	right_pipette.dispense(18.96971686762255, location=labware_3.wells()[9].bottom(z=54.796088947537044))
+	right_pipette.aspirate(18.96971686762255, location=labware_1.wells()[0].bottom(z=54.76528155765402))
+	right_pipette.dispense(18.96971686762255, location=labware_3.wells()[9].bottom(z=54.76528155765402))
+	right_pipette.aspirate(18.96971686762255, location=labware_1.wells()[0].bottom(z=54.73447416777101))
+	right_pipette.dispense(18.96971686762255, location=labware_3.wells()[9].bottom(z=54.73447416777101))
+	right_pipette.aspirate(18.96971686762255, location=labware_1.wells()[0].bottom(z=54.703666777887975))
+	right_pipette.dispense(18.96971686762255, location=labware_3.wells()[9].bottom(z=54.703666777887975))
+	right_pipette.aspirate(18.96971686762255, location=labware_1.wells()[0].bottom(z=54.672859388004966))
+	right_pipette.dispense(18.96971686762255, location=labware_3.wells()[9].bottom(z=54.672859388004966))
+	right_pipette.aspirate(18.96971686762255, location=labware_1.wells()[0].bottom(z=54.64205199812196))
+	right_pipette.dispense(18.96971686762255, location=labware_3.wells()[9].bottom(z=54.64205199812196))
+	right_pipette.drop_tip()
+	right_pipette.pick_up_tip(labware_11.wells()[57])
+	right_pipette.aspirate(17.23087116184363, location=labware_1.wells()[2].bottom(z=56.08941684665163))
+	right_pipette.dispense(17.23087116184363, location=labware_3.wells()[9].bottom(z=56.08941684665163))
+	right_pipette.aspirate(17.23087116184363, location=labware_1.wells()[2].bottom(z=56.06143339441505))
+	right_pipette.dispense(17.23087116184363, location=labware_3.wells()[9].bottom(z=56.06143339441505))
+	right_pipette.aspirate(17.23087116184363, location=labware_1.wells()[2].bottom(z=56.033449942178436))
+	right_pipette.dispense(17.23087116184363, location=labware_3.wells()[9].bottom(z=56.033449942178436))
+	right_pipette.drop_tip()
+

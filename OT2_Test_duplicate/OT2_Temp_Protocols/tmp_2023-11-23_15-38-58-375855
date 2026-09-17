@@ -1,0 +1,31 @@
+from opentrons import protocol_api
+from opentrons.types import Location, Point
+
+metadata = {'apiLevel': '2.6'}
+
+
+def run(protocol: protocol_api.ProtocolContext):
+	# Labware
+	labware_1 = protocol.load_labware('opentrons_6_tuberack_falcon_50ml_conical', 1)
+	labware_3 = protocol.load_labware('opentrons_10_tuberack_falcon_4x50ml_6x15ml_conical', 3)
+	labware_10 = protocol.load_labware('opentrons_96_tiprack_1000ul', 10)
+	labware_11 = protocol.load_labware('opentrons_96_tiprack_20ul', 11)
+	left_pipette = protocol.load_instrument(instrument_name='p1000_single_gen2', mount='left')
+	right_pipette = protocol.load_instrument(instrument_name='p20_single_gen2', mount='right')
+
+	# Protocol
+	right_pipette.pick_up_tip(labware_11.wells()[16])
+	right_pipette.aspirate(17.241041409263133, location=labware_1.wells()[0].bottom(z=58.35651197322338))
+	right_pipette.dispense(17.241041409263133, location=labware_3.wells()[9].bottom(z=58.35651197322338))
+	right_pipette.aspirate(17.241041409263133, location=labware_1.wells()[0].bottom(z=58.328512004199524))
+	right_pipette.dispense(17.241041409263133, location=labware_3.wells()[9].bottom(z=58.328512004199524))
+	right_pipette.drop_tip()
+	right_pipette.pick_up_tip(labware_11.wells()[17])
+	right_pipette.aspirate(14.448510172852897, location=labware_1.wells()[2].bottom(z=57.97234350748482))
+	right_pipette.dispense(14.448510172852897, location=labware_3.wells()[9].bottom(z=57.97234350748482))
+	right_pipette.aspirate(14.448510172852897, location=labware_1.wells()[2].bottom(z=57.94887869305296))
+	right_pipette.dispense(14.448510172852897, location=labware_3.wells()[9].bottom(z=57.94887869305296))
+	right_pipette.aspirate(14.448510172852897, location=labware_1.wells()[2].bottom(z=57.925413878621086))
+	right_pipette.dispense(14.448510172852897, location=labware_3.wells()[9].bottom(z=57.925413878621086))
+	right_pipette.drop_tip()
+

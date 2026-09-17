@@ -1,0 +1,97 @@
+{
+    "NameMappings": {
+        "<class 'OpentronsOT2.OT2'>-2649521558432": "ot2",
+        "<class 'HelperClassDefinitions.Container'>-2649521558912": "corrosion_inhibitor1_container",
+        "<class 'HelperClassDefinitions.Container'>-2649521558576": "corrosion_inhibitor2_container",
+        "<class 'HelperClassDefinitions.Container'>-2649521559104": "target_container"
+    },
+    "OpentronsOT2": {
+        "<class 'OpentronsOT2.OT2'>-2649521558432": {
+            "_deck_position": null,
+            "ip_address": "169.254.55.40",
+            "session_id": null,
+            "protocol_id": null,
+            "configuration": {
+                "1": "opentrons_6_tuberack_falcon_50ml_conical",
+                "2": null,
+                "3": "opentrons_10_tuberack_falcon_4x50ml_6x15ml_conical",
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null,
+                "8": null,
+                "9": null,
+                "10": "opentrons_96_tiprack_1000ul",
+                "11": "opentrons_96_tiprack_20ul",
+                "12": "p1000_single_gen2",
+                "13": "p20_single_gen2"
+            },
+            "left_pipette": "p1000_single_gen2",
+            "left_pipette_volume": 1000,
+            "tip_racks_for_left_pipette": [],
+            "current_tip_index_for_left_pipette": -1,
+            "current_tip_rack_for_left_pipette": [
+                "labware_10",
+                "opentrons_96_tiprack_1000ul"
+            ],
+            "right_pipette": "p20_single_gen2",
+            "right_pipette_volume": 20,
+            "tip_racks_for_right_pipette": [],
+            "current_tip_index_for_right_pipette": -1,
+            "current_tip_rack_for_right_pipette": [
+                "labware_11",
+                "opentrons_96_tiprack_20ul"
+            ],
+            "custom_labware_definition": [],
+            "MIN_PIPETTE_VOLUME_USE": 0.2,
+            "HEIGHT_ABOVE_SOLVENT_LEVEL_WHEN_DISPENSING": 60,
+            "HEIGHT_BELOW_SOLVENT_LEVEL_WHEN_ASPIRATING": 30
+        }
+    },
+    "SampleHolder": {},
+    "Containers": {
+        "<class 'HelperClassDefinitions.Container'>-2649521558912": {
+            "name": "FALCON_TUBE_50_ML_1303669481376",
+            "_current_hardware": "<class 'OpentronsOT2.OT2'>-2649521558432",
+            "_deck_position": 1,
+            "_slot_number": 1,
+            "_current_volume": "39.679999999999986 mL",
+            "_max_volume": "50.0 mL",
+            "_container_type": [
+                "FALCON_TUBE_50_ML",
+                115,
+                50,
+                28
+            ]
+        },
+        "<class 'HelperClassDefinitions.Container'>-2649521558576": {
+            "name": "FALCON_TUBE_50_ML_1303682209008",
+            "_current_hardware": "<class 'OpentronsOT2.OT2'>-2649521558432",
+            "_deck_position": 1,
+            "_slot_number": 3,
+            "_current_volume": "39.76999999999997 mL",
+            "_max_volume": "50.0 mL",
+            "_container_type": [
+                "FALCON_TUBE_50_ML",
+                115,
+                50,
+                28
+            ]
+        },
+        "<class 'HelperClassDefinitions.Container'>-2649521559104": {
+            "name": "FALCON_TUBE_50_ML_1303682209248",
+            "_current_hardware": "<class 'OpentronsOT2.OT2'>-2649521558432",
+            "_deck_position": 3,
+            "_slot_number": 10,
+            "_current_volume": "0.5500000000000002 mL",
+            "_max_volume": "50.0 mL",
+            "_container_type": [
+                "FALCON_TUBE_50_ML",
+                115,
+                50,
+                28
+            ]
+        }
+    },
+    "Chemicals": {}
+}
